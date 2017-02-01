@@ -1,4 +1,5 @@
 FROM php:5.6-apache
+MAINTAINER lavoweb <aurelien@lavoweb.net>
 
 RUN apt-get update
 RUN apt-get install --yes --force-yes g++ gettext libicu-dev openssl libc-client-dev libkrb5-dev  libxml2-dev libfreetype6-dev libgd-dev libmcrypt-dev bzip2 libbz2-dev libtidy-dev libcurl4-openssl-dev libz-dev libmemcached-dev
@@ -20,4 +21,4 @@ RUN docker-php-ext-install tidy
 RUN docker-php-ext-install xmlrpc
 RUN docker-php-ext-install mbstring
 RUN yes '' | pecl install -f apc
-docker-php-ext-configure hash --with-mhash
+RUN docker-php-ext-configure hash --with-mhash
