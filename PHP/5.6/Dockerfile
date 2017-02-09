@@ -26,3 +26,4 @@ RUN docker-php-ext-configure hash --with-mhash
 
 # Apache Configuration
 RUN a2enmod rewrite
+RUN a2enmod headers
