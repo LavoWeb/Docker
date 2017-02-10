@@ -27,3 +27,8 @@ RUN docker-php-ext-configure hash --with-mhash
 # Apache Configuration
 RUN a2enmod rewrite
 RUN a2enmod headers
+
+# Imagemagick
+RUN apt-get install --yes --force-yes libmagickwand-dev libmagickcore-dev
+RUN yes '' | pecl install -f imagick
+RUN docker-php-ext-enable imagick
