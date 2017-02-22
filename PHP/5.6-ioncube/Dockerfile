@@ -39,6 +39,7 @@ RUN cd /tmp \
 RUN a2enmod rewrite
 RUN a2enmod headers
 RUN a2enmod ssl
+RUN a2ensite default-ssl
 
 # Imagemagick
 RUN apt-get install --yes --force-yes libmagickwand-dev libmagickcore-dev
