@@ -30,8 +30,11 @@ RUN docker-php-ext-configure hash --with-mhash
 # Apache Configuration
 RUN a2enmod rewrite
 RUN a2enmod headers
+
+# SSL
 RUN a2enmod ssl
 RUN a2ensite default-ssl
+RUN openssl req -subj /CN=example.com/O=My Company Name LTD./C=US -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout /etc/ssl/certs/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem
 
 # Imagemagick
 RUN apt-get install --yes --force-yes libmagickwand-dev libmagickcore-dev
