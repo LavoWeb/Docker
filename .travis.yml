@@ -1,0 +1,6 @@
+sudo: required
+language: ruby
+services:
+  - docker
+script:
+  - find . -type f -name Dockerfile -exec "docker build {}" \;
