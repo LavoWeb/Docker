@@ -3,4 +3,4 @@ language: ruby
 services:
   - docker
 script:
-  - find . -type f -name Dockerfile -exec "docker build {}" \;
+  - find . -type f -name Dockerfile -exec sh -c "docker build $(dirname {})" \;
