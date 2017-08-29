@@ -3,4 +3,7 @@ language: ruby
 services:
   - docker
 script:
-  - find . -type f -name Dockerfile -exec sh -c "docker build $(dirname {})" \;
+  - for file in `find . -type f -name Dockerfile -print 2>/dev/null` \
+    do \
+        docker build `dirname $file` \
+    done
