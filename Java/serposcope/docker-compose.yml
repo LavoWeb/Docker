@@ -1,0 +1,21 @@
+version: "3"
+services:
+  serposcope:
+    image: lavoweb/serposcope
+    volumes:
+     - ./serposcope.conf:/etc/serposcope/serposcope.conf
+    ports:
+      - "7134:7134"
+    links:
+     - db
+  db:
+    image: mysql
+    volumes:
+      - "db-data:/var/lib/mysql"
+    environment:
+     - MYSQL_DATABASE=serposcope
+     - MYSQL_USER=serposcope
+     - MYSQL_PASSWORD=serposcope
+     - MYSQL_RANDOM_ROOT_PASSWORD=true
+volumes:
+  db-data:
