@@ -1,5 +1,5 @@
 FROM lavoweb/php-5.6
-MAINTAINER lavoweb <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
 
 # IonCube
 RUN cd /tmp \

@@ -1,5 +1,5 @@
 FROM php:5.4-apache
-MAINTAINER lavoweb <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
 
 RUN apt-get update
 RUN apt-get install --yes --force-yes cron g++ gettext libicu-dev openssl libc-client-dev libkrb5-dev  libxml2-dev libfreetype6-dev libgd-dev libmcrypt-dev bzip2 libbz2-dev libtidy-dev libcurl4-openssl-dev libz-dev libmemcached-dev libxslt-dev
