@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:2-alpine
 MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
 RUN apk update
 RUN apk add git rsync gcc libffi libffi-dev musl-dev linux-headers  openssl-dev make
