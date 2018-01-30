@@ -1,0 +1,7 @@
+version: '3'
+services:
+  ansistrano:
+    image: "lavoweb/ansistrano"
+    volumes:
+      - "./host:/var/host"
+      - "./deploy.yml:/var/deploy.yml"
