@@ -5,3 +5,5 @@ services:
     volumes:
       - "./host:/var/host"
       - "./deploy.yml:/var/deploy.yml"
+    extra_hosts:
+      - "docker.local:192.168.99.100"
