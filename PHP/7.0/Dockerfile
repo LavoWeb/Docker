@@ -39,3 +39,5 @@ RUN openssl req -subj '/CN=example.com/O=My Company Name LTD./C=US' -new -newkey
 RUN apt-get install --yes --force-yes libmagickwand-dev libmagickcore-dev
 RUN yes '' | pecl install -f imagick
 RUN docker-php-ext-enable imagick
+
+CMD cron && apache2-foreground
