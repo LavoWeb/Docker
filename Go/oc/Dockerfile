@@ -1,8 +1,8 @@
 FROM frolvlad/alpine-glibc:latest
 MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
 
-ENV OC_VERSION=v3.7.1 \
-    OC_TAG_SHA=ab0f056 \
+ENV OC_VERSION=v3.7.2 \
+    OC_TAG_SHA=282e43f \
     BUILD_DEPS='tar gzip' \
     RUN_DEPS='curl ca-certificates gettext'
 
