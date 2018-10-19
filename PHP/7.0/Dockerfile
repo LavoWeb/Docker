@@ -10,6 +10,7 @@ RUN docker-php-ext-install bz2
 RUN docker-php-ext-install calendar
 RUN docker-php-ext-install dba
 RUN docker-php-ext-install exif
+RUN docker-php-ext-install fileinfo
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr
 RUN docker-php-ext-install gd
 RUN docker-php-ext-install gettext
