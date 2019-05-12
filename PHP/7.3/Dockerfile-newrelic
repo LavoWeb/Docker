@@ -1,0 +1,10 @@
+FROM lavoweb/php-7.3:magento2
+MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+
+RUN apt-get --yes --force-yes install gnupg
+RUN curl -O https://download.newrelic.com/548C16BF.gpg \
+    && ls \
+    && apt-key add 548C16BF.gpg \
+    && echo "deb http://apt.newrelic.com/debian/ newrelic non-free" > /etc/apt/sources.list.d/newrelic.list
+RUN apt-get update
+RUN apt-get --yes --force-yes install newrelic-php5
