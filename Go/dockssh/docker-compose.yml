@@ -1,0 +1,19 @@
+version: "3"
+services:
+  dockssh:
+    image: lavoweb/dockssh
+    ports:
+      - "22022:22022"
+    links:
+     - redis
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+     - /usr/bin/docker:/usr/bin/docker
+    command: ["./bin/dockssh", "-redis", "redis://redis:6379/0"]
+  redis:
+    image: redis:alpine3.9
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - "redis-data:/data"
+volumes:
+  redis-data:
