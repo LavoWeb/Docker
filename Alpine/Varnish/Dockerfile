@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.7
 MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
 
 ENV VARNISH_PORT 80
