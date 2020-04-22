@@ -5,3 +5,4 @@ RUN curl -s https://getcomposer.org/installer | php
 RUN chmod +x composer.phar
 RUN mv composer.phar /usr/local/bin/
 RUN ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
+RUN composer global require hirak/prestissimo
