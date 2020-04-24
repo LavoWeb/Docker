@@ -20,10 +20,7 @@ RUN docker-php-ext-install pdo pdo_mysql
 RUN docker-php-ext-install soap
 RUN docker-php-ext-install tidy
 RUN docker-php-ext-install xmlrpc
-RUN docker-php-ext-install mbstring
 RUN docker-php-ext-install xsl
-RUN docker-php-ext-configure zip --enable-zip --without-libzip
-RUN docker-php-ext-install zip
 RUN docker-php-ext-configure hash --with-mhash
 
 # Apache Configuration
