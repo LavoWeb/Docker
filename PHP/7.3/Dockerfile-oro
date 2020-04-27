@@ -1,0 +1,10 @@
+FROM lavoweb/php-7.3
+MAINTAINER lavoweb <aurelien@lavoweb.net>
+
+RUN docker-php-ext-install pcntl
+RUN apt update
+RUN apt install --yes --force-yes nodejs npm
+RUN npm install -g n
+RUN n latest
+RUN sed -ie s#/var/www/html#/var/www/html/public#g /etc/apache2/sites-enabled/000-default.conf
+RUN sed -ie s#/var/www/html#/var/www/html/public#g /etc/apache2/sites-enabled/default-ssl.conf
