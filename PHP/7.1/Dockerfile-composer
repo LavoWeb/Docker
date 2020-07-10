@@ -1,7 +1,7 @@
 FROM lavoweb/php-7.1
 MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
 
-RUN apt-get --yes --force-yes install unzip
+RUN apt-get --yes --force-yes install unzip git
 RUN echo "memory_limit=-1" >  /usr/local/etc/php/conf.d/memory.ini
 RUN curl -s https://getcomposer.org/installer | php
 RUN chmod +x composer.phar
