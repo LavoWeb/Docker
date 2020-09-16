@@ -2,7 +2,7 @@ FROM php:7.4-apache
 MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
 
 RUN apt-get update
-RUN apt-get install --yes --force-yes cron g++ gettext libicu-dev openssl libc-client-dev libkrb5-dev  libxml2-dev libfreetype6-dev libgd-dev libmcrypt-dev bzip2 libbz2-dev libtidy-dev libcurl4-openssl-dev libz-dev libmemcached-dev libxslt-dev
+RUN apt-get install --yes --force-yes cron g++ gettext libicu-dev openssl libc-client-dev libkrb5-dev  libxml2-dev libfreetype6-dev libgd-dev libmcrypt-dev bzip2 libbz2-dev libtidy-dev libcurl4-openssl-dev libz-dev libmemcached-dev libxslt-dev libzip-dev
 
 # PHP Configuration
 RUN docker-php-ext-install bcmath
@@ -22,6 +22,8 @@ RUN docker-php-ext-install tidy
 RUN docker-php-ext-install xmlrpc
 RUN docker-php-ext-install xsl
 RUN docker-php-ext-configure hash --with-mhash
+RUN docker-php-ext-install zip
+RUN docker-php-ext-install sockets
 
 # Apache Configuration
 RUN a2enmod rewrite
