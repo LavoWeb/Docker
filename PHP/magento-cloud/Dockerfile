@@ -1,5 +1,5 @@
 FROM lavoweb/php-7.2
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN apt-get update
 RUN apt-get install --yes --force-yes ssh rsync

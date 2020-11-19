@@ -1,5 +1,5 @@
 FROM lavoweb/php-7.3
-MAINTAINER lavoweb <aurelien@lavoweb.net>
+MAINTAINER lavoweb <aurelien@lumao.eu>
 
 RUN docker-php-ext-install pcntl
 RUN apt update

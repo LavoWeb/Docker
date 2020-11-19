@@ -1,5 +1,5 @@
 FROM golang:1.12
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN go get github.com/AurelienLavorel/dockssh
 RUN ssh-keygen -t rsa -f /root/.ssh/id_rsa

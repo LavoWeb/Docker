@@ -1,5 +1,5 @@
 FROM lavoweb/php-7.4
-MAINTAINER lavoweb <aurelien@lavoweb.net>
+MAINTAINER lavoweb <aurelien@lumao.eu>
 
 RUN docker-php-ext-enable opcache
 RUN echo '\nopcache.enable_cli=1 \n\

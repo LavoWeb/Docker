@@ -1,5 +1,5 @@
 FROM frolvlad/alpine-glibc:latest
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 ENV OC_VERSION=v3.11.0 \
     OC_TAG_SHA=0cbc58b \

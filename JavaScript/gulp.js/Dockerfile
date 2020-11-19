@@ -1,5 +1,5 @@
 FROM node:10
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 ENV WORKDIR /home/workspace
 

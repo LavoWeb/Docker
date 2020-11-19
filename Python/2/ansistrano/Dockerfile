@@ -1,5 +1,5 @@
 FROM python:2-alpine
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 RUN apk update
 RUN apk add git rsync gcc libffi libffi-dev musl-dev linux-headers openssl-dev make sshpass
 RUN pip install ansible

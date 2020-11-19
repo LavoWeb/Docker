@@ -1,5 +1,5 @@
 FROM lavoweb/php-7.3
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN apt-get --yes --force-yes install unzip git rsync
 RUN echo "memory_limit=-1" >  /usr/local/etc/php/conf.d/memory.ini

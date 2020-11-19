@@ -1,5 +1,5 @@
 FROM alpine:3.7
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 ENV VARNISH_PORT 80
 RUN apk update && apk add --no-cache varnish

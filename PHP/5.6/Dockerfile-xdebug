@@ -1,5 +1,5 @@
 FROM lavoweb/php-5.6
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN pecl install xdebug-2.5.5
 RUN docker-php-ext-enable xdebug
