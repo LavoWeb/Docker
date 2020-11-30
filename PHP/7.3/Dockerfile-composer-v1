@@ -1,0 +1,9 @@
+FROM lavoweb/php-7.3
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
+
+RUN apt-get --yes --force-yes install unzip git rsync
+RUN echo "memory_limit=-1" >  /usr/local/etc/php/conf.d/memory.ini
+RUN curl -O https://getcomposer.org/composer-1.phar
+RUN chmod +x composer-1.phar
+RUN mv composer-1.phar /usr/local/bin/composer.phar
+RUN ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
