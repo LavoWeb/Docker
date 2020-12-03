@@ -1,4 +1,4 @@
-FROM php:8.0.0RC4-apache
+FROM php:8.0-apache
 MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN apt-get update
