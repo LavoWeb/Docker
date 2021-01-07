@@ -1,7 +1,7 @@
 FROM lavoweb/php-7.3
 MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
-RUN pecl install xdebug
+RUN pecl install xdebug-2.9.8
 RUN docker-php-ext-enable xdebug
 RUN echo 'xdebug.remote_enable = On' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
      echo 'xdebug.remote_autostart= On' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
