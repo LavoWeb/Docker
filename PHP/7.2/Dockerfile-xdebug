@@ -1,5 +1,5 @@
 FROM lavoweb/php-7.2:magento2
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN pecl install xdebug-2.9.8
 RUN docker-php-ext-enable xdebug

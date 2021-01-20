@@ -1,5 +1,5 @@
 FROM lavoweb/php-7.0:magento2-xdebug
-MAINTAINER Aurélien Lavorel <aurelien@lavoweb.net>
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN apt-get --yes --force-yes install gnupg
 RUN curl -O https://download.newrelic.com/548C16BF.gpg \

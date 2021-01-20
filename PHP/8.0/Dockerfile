@@ -1,4 +1,4 @@
-FROM lavoweb/php-7.3:opcache
+FROM lavoweb/php-8.0:opcache
 MAINTAINER lavoweb <aurelien@lumao.eu>
 
 RUN sed -ie s#/var/www/html#/var/www/html/pub#g /etc/apache2/sites-enabled/000-default.conf
