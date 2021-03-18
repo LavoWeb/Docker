@@ -1,4 +1,4 @@
-FROM lavoweb/php-7.2
+FROM php:7.2-apache
 MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN apt-get update
