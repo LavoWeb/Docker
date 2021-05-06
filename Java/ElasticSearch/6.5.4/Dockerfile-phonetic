@@ -1,0 +1,5 @@
+FROM lavoweb/elasticsearch-6.5.4
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
+
+RUN bin/elasticsearch-plugin install analysis-phonetic && \
+    bin/elasticsearch-plugin install analysis-icu
