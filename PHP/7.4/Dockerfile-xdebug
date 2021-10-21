@@ -1,4 +1,4 @@
-FROM lavoweb/php-7.3:magento2
+FROM lavoweb/php-7.4:magento2
 MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN pecl install xdebug-2.9.8
