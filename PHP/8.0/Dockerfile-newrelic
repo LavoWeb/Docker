@@ -1,4 +1,4 @@
-FROM lavoweb/php-7.3:magento2
+FROM lavoweb/php-8.0:magento2
 MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN apt-get --yes --force-yes install gnupg

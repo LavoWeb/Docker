@@ -1,4 +1,4 @@
-FROM lavoweb/php-7.3:magento2-xdebug
+FROM lavoweb/php-8.0:magento2-xdebug
 MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
