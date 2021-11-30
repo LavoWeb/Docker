@@ -1,0 +1,9 @@
+FROM lavoweb/php-7.4
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
+
+RUN curl -O https://files.magerun.net/n98-magerun2.phar && \
+    chmod +x ./n98-magerun2.phar && \
+    mv ./n98-magerun2.phar /usr/local/bin/ && \
+    ln -s /usr/local/bin/n98-magerun2.phar /usr/local/bin/n98-magerun2
+
+CMD n98-magerun2
