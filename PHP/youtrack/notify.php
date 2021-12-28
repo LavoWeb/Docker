@@ -45,15 +45,16 @@ if (!count($res)) {
 foreach ($res as $issueId) {
     $message = '{"text": "Déployé en ' . $env . '"}';
     createComment($apiDomain, $token, $issueId, $message);
-    $message = '{
-        "text": "Log: ' . $jobUrl . '"
-        "visibility": {
-            "permittedGroups": [
-                {"id": "' . $youtrackGroupId . '"}
+    $data = [
+        'text' => 'Log: ' . $jobUrl,
+        'visibility' => [
+            'permittedGroups' => [
+                ['id' => $youtrackGroupId]
             ],
-            "$type": "LimitedVisibility"
-        }
-    }';
+            '$type' => "LimitedVisibility"
+        ]
+    ];
+    $message = json_encode($data);
     createComment($apiDomain, $token, $issueId, $message);
 }
 echo 'Done';
