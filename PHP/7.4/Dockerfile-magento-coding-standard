@@ -1,0 +1,4 @@
+FROM lavoweb/php-7.4:composer
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
+
+RUN composer require --ignore-platform-reqs magento/magento-coding-standard
