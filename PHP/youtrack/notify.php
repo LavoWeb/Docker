@@ -8,7 +8,7 @@ $env = getenv('ENVIRONMENT');
 $regex = '#[A-Z0-9]+-[0-9]+#';
 $projectId = getenv('$CI_PROJECT_ID');
 $apiDomain = getenv('CI_API_V4_URL') . '/';
-$token = getenv('CI_JOB_TOKEN');
+$token = getenv('GITLAB_CI_API_TOKEN');
 
 if (!$commitMessage) {
     die("No commit found \n");
