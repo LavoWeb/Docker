@@ -6,9 +6,9 @@ $jobUrl = getenv('CI_JOB_URL');
 $youtrackGroupId = getenv('YOUTRACK_GROUP_ID');
 $env = getenv('ENVIRONMENT');
 $regex = '#[A-Z0-9]+-[0-9]+#';
-$projectId = getenv('$CI_PROJECT_ID');
-$apiDomain = getenv('CI_API_V4_URL') . '/';
-$token = getenv('GITLAB_CI_API_TOKEN');
+$projectId = getenv('CI_PROJECT_ID');
+$gitlabApiDomain = getenv('CI_API_V4_URL') . '/';
+$gitlabApiToken = getenv('GITLAB_CI_API_TOKEN');
 
 if (!$commitMessage) {
     die("No commit found \n");
@@ -32,7 +32,8 @@ function retryJob($jobId, $projectId, $apiDomain, $token) {
 function retryCanceledJobs($projectId, $apiDomain, $token) {
     $dateLastWeek = strtotime(date("Y-m-d", strtotime(date("Y-m-d"))) . " -1 week");
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $apiDomain . 'projects/' . $projectId . '/jobs?scope[]=canceled');
+    $apiUrl = $apiDomain . 'projects/' . $projectId . '/jobs?scope[]=canceled';
+    curl_setopt($ch, CURLOPT_URL, $apiUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
     $headers = array();
@@ -61,7 +62,8 @@ function createComment($apiDomain, $token, $issueId, $data)
 {
     $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL, $apiDomain . 'api/issues/' . $issueId . '/comments');
+    $commentUrl = $apiDomain . 'api/issues/' . $issueId . '/comments';
+    curl_setopt($ch, CURLOPT_URL, $commentUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -72,7 +74,7 @@ function createComment($apiDomain, $token, $issueId, $data)
     $headers[] = 'Content-Type: application/json';
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-    curl_exec($ch);
+    $content = curl_exec($ch);
     if (curl_errno($ch)) {
         echo 'Error:' . curl_error($ch);
     } else {
@@ -103,6 +105,6 @@ foreach ($res as $issueId) {
     $message = json_encode($data);
     createComment($apiDomain, $token, $issueId, $message);
 }
-retryCanceledJobs($projectId, $apiDomain, $token);
+retryCanceledJobs($projectId, $gitlabApiDomain, $gitlabApiToken);
 echo 'Done';
 echo "\n";
