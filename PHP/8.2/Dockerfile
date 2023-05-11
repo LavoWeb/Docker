@@ -1,4 +1,4 @@
-FROM php:8.2-rc-apache-buster
+FROM php:8.2-apache
 MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN apt-get update
