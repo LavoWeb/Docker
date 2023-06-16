@@ -3,3 +3,4 @@ MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
 
 RUN composer require --ignore-platform-reqs magento/magento-coding-standard
 RUN vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/,../../phpcompatibility/php-compatibility
+RUN cp -R . /opt/script
