@@ -1,0 +1,10 @@
+FROM ubuntu:22.10
+
+RUN apt-get update && apt-get install -y openssh-server
+RUN echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
+RUN echo 'root:root' | chpasswd
+RUN mkdir /run/sshd
+
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D", "-o", "ListenAddress=0.0.0.0"]
