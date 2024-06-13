@@ -1,0 +1,9 @@
+FROM lavoweb/php-8.3:magento2
+MAINTAINER Aurélien Lavorel <aurelien@lumao.eu>
+
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
+RUN echo 'xdebug.mode=debug' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
+     echo 'xdebug.client_host=host.docker.internal' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
+     echo 'xdebug.discover_client_host=On' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN rm -f  /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini
